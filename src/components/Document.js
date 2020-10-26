@@ -8,6 +8,7 @@ import {
 } from '@react-pdf/renderer';
 
 import roboto from '../fonts/Roboto-Regular.ttf';
+import image from '../img/don-quijote-de-la-mancha.jpg'
 
 const styles = StyleSheet.create({
   body: {
@@ -85,7 +86,7 @@ const MyDocument = ({ firstArticle }) => (
       <Text style={styles.author}>Miguel de Cervantes</Text>
       <Image
         style={styles.image}
-        src="http://static.donquijote.org/images/blogs/dq-reg/don-quijote-de-la-mancha.jpg"
+        src={image}
       />
       <Subtitle>
         Capítulo I: Que trata de la condición y ejercicio del famoso hidalgo D.
