@@ -7,6 +7,8 @@ import {
   Font,
 } from '@react-pdf/renderer';
 
+import roboto from '../fonts/Roboto-Regular.ttf';
+
 const styles = StyleSheet.create({
   body: {
     paddingTop: 35,
@@ -17,23 +19,23 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     textAlign: 'center',
-    // fontFamily: 'Roboto',
+    fontFamily: 'Roboto',
   },
   author: {
     fontSize: 12,
     textAlign: 'center',
     marginBottom: 40,
-    // fontFamily: 'Roboto',
+    fontFamily: 'Roboto',
   },
   subtitle: {
     fontSize: 16,
     margin: 12,
-    // fontFamily: 'Roboto',
+    fontFamily: 'Roboto',
   },
   text: {
     margin: 12,
     fontSize: 12,
-    // fontFamily: 'Roboto',
+    fontFamily: 'Roboto',
     textAlign: 'justify',
     color: 'black',
   },
@@ -47,7 +49,7 @@ const styles = StyleSheet.create({
     color: 'grey',
     marginBottom: 15,
     textAlign: 'center',
-    // fontFamily: 'Roboto',
+    fontFamily: 'Roboto',
   },
   footer: {
     position: 'absolute',
@@ -57,14 +59,14 @@ const styles = StyleSheet.create({
     right: 0,
     textAlign: 'center',
     color: 'grey',
-    // fontFamily: 'Roboto',
+    fontFamily: 'Roboto',
   },
 });
 
-// Font.register({
-//   family: 'Roboto',
-//   src: `${__dirname}/fonts/Roboto-Regular.ttf`,
-// });
+Font.register({
+  family: 'Roboto',
+  src: roboto,
+});
 
 const Subtitle = ({ children, ...props }) => (
   <Text style={styles.subtitle} {...props}>
