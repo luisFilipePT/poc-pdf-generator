@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from 'styled-components';
+import { PDFViewer } from '@react-pdf/renderer';
+import MyDocument from "./components/Document";
+import Dashboard from "./components/Dashboard";
+import {useState} from "react";
+
+const Layout = styled.div`
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+`;
+
+const Wrapper = styled.div`
+  flex: 1;
+  border: solid 1px #ddd;
+  height: 100vh;
+`;
 
 function App() {
+  const [firstArticle, setFirstArticle] = useState('Capítulo I: Que trata de la condición y ejercicio del famoso hidalgo D. Quijote de la Mancha');
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Layout>
+        <Wrapper>
+          <Dashboard setFirstArticle={setFirstArticle}/>
+        </Wrapper>
+        <Wrapper>
+          <PDFViewer>
+            <MyDocument firstArticle={firstArticle}/>
+          </PDFViewer>
+        </Wrapper>
+      </Layout>
     </div>
   );
 }
